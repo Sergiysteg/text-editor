@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="main-block ">
+            <div class="top-block">
+                <p>Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet</p>
+            </div>
+            <div class="center-block">
+                <form>
+                    <button class="edit-button" type="button" onclick="editBtn()">edit</button>
+                    <button class="style-button" type="button" onclick="styleBtn()">style</button>
+                </form>
+            </div>
+            <div class="bottom-block">
+                <div class="edit-block hidden">
+                    <form>
+                        <textarea class="area"></textarea>
+                        <button class="add-button" type="button" onclick="addBtn()">add</button>
+                        <button class="save-button" type="button" onclick="saveBtn()">save</button>
+                    </form>
+                </div>
+                <div class="style-block hidden">
+                    <form name="formSize">
+                        <h2>Font Size:</h2>
+                        <input onclick="fontSize()" type="radio" value="12px" name="size">12px
+                        <input onclick="fontSize()" type="radio" value="14px" name="size">14px
+                        <input onclick="fontSize()" type="radio" value="16px" name="size" checked>16px
+                        <input onclick="fontSize()" type="radio" value="18px" name="size">18px
+                        <input onclick="fontSize()" type="radio" value="20px" name="size">20px
+                    </form>
+                    <form name="formFamizy">
+                        <h2>Font Family:</h2>
+                        <select onchange="fontFamily()">
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="fantasy">fantazy</option>
+                            <option value="monospace">monospace</option>
+                            <option value="sans-serif">sans-serif</option>
+                        </select>
+                    </form>
+                    <form name="formColors">
+                        <h2>Colors:</h2>
+                        <input onclick="setBgColor()" class="button-gray" type="button" value="Background color">
+                        <input onclick="setTextColor()" class="button-gray" type="button" value="Text color">
+                    </form>
+                    <form name="formStyle">
+                        <h2>Style:</h2>
+                        <input type="checkbox" onclick="fontWeight()">bold
+                        <input type="checkbox" onclick="fontStyle()">cursive
+                    </form>
+                    <div class="colors-block hidden">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="add-block hidden">
+            <form name="formChoose">
+                <div class="formChoose-block">
+                    <h2>Choose what you want:</h2>
+                    <input type="button" value="back" onclick="backBtn()">
+                </div>
+                <input type="radio" name="choose" data-create="table" onclick="chooseBtn()">table
+                <input type="radio" name="choose" data-create="list" onclick="chooseBtn()">list
+            </form>
+            <form name="formCreateTable" class="formCreateTable hidden">
+                <label for="countTr">
+                    <span>Count TR:</span>
+                    <input type="text" id="countTr" name="countTr">
+                </label>
+                <label for="countTd">
+                    <span>Count TD:</span>
+                    <input type="text" id="countTd" name="countTd">
+                </label>
+                <h2>Add style to your table:</h2>
+                <label for="widthTd">
+                    <span>Width of TD:</span>
+                    <input type="text" id="widthTd" name="widthTd">
+                </label>
+                <label for="heigthTd">
+                    <span>Height of TD:</span>
+                    <input type="text" id="heigthTd" name="heigthTd">
+                </label>
+            </form>
+            <form name="formTableLook" class="formTableLook hidden">
+                <div class="formTableLook-block">
+                    <span>Width of border:</span>
+                    <input type="text" id="widthBorder" name="widthBorder">
+                    <span>Type of border:</span>
+                    <select name="typeBorder" id="typeBorder">
+                        <option value="solid">solid</option>
+                        <option value="dashed">dashed</option>
+                        <option value="double">double</option>
+                    </select>
+                    <span>Color of border:</span>
+                    <select name="colorBorder" id="colorBorder">
+                        <option value="red">red</option>
+                        <option value="green">green</option>
+                        <option value="blue">blue</option>
+                        <option value="black">black</option>
+                    </select>
+                </div>
+                <input type="button" value="create" onclick="createTable()">
+            </form>
+
+
+            <form name="formCreateList" class="formCreateList hidden">
+                <label for="countLi">
+                    <span>Count li:</span>
+                    <input type="text" id="countLi" name="countLi">
+                </label>
+                <label for="typeOfM">
+                    <span>Type of marks:</span>
+                    <select name="typeOfM" id="typeOfM">
+                        <option value="circle">circle</option>
+                        <option value="disc">disc</option>
+                        <option value="square">square</option>
+                    </select>
+                </label>
+                <input type="button" value="create" onclick="createList()">
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
